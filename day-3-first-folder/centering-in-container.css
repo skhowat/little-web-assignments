@@ -47,19 +47,13 @@ table {
 	border-spacing: 0;
 }
 
-h1 {
-  font-size: 3em;
-  font-family: Geneva;
-  font-weight: bold;
-  background-color: pink;
-  text-align: center;
+
+.container {
+  background-color: gray;
   max-width: 600px;
   margin: 0 auto 0 auto;
 }
 
-p {
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 600px;
+h1 {
+  border: solid 1px red;
 }
