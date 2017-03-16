@@ -1,3 +1,112 @@
-p {
-  color: red;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+.container {
+  background-color: white;
+  max-width: 750px;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+h1  {
+  font-family: Helvetica;
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+}
+
+img {
+  max-width: 675px;
+}
+
+#date {
+  font-family: Helvetica;
+  font-weight: bold;
+  text-align: center;
+}
+
+#new {
+  font-family: Helvetica;
+  font-weight: bold;
+  background-color: #B9392C;
+  color: white;
+  border-radius: 5px;
+
+}
+
+h2 {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.byline {
+  font-family: Helvetica;
+  font-size: 13px;
+  margin: 17px auto 17px auto;
+}
+
+.author {
+  font-weight: bolder;
+  color: #2959BF;
+}
+
+article {
+  text-align: left;
+  font-size: 18px;
+  font-family: Georgia;
+  line-height: 30px;
+  margin-bottom: 50px;
+
 }
