@@ -49,11 +49,40 @@ table {
 
 
 .container {
-  background-color: gray;
   max-width: 600px;
-  vertical-align: middle;
+  margin: 30px auto 30px auto;
 }
 
-h1 {
-  border: solid 1px red;
+
+
+.outer-box {
+  border: solid 2px #CECFD5;
+  height: 820px;
+  width: 560px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.inner-box {
+  background-color: #CECFD5;
+  height: 130px;
+  width: 130px;
+  position: absolute;
+  right: -40px;
+  top: 65px;
+  border-radius: 100%;
+
+}
+
+h3 {
+  background-color: red;
+  height: 130px;
+  width: 130px;
+  position: relative;
+  right: -475px;
+  top: 65px;
+  border-radius: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
 }
