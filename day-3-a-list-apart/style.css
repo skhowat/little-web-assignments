@@ -73,14 +73,19 @@ img {
   font-family: Helvetica;
   font-weight: bold;
   text-align: center;
+
 }
 
 #new {
   font-family: Helvetica;
   font-weight: bold;
+  display: inline-block;
+  width: 48px;
   background-color: #B9392C;
   color: white;
   border-radius: 5px;
+  line-height: 22px;
+  vertical-align: middle;
 
 }
 
