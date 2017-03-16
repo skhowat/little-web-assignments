@@ -128,4 +128,106 @@ nav li a {
 	font-size: 1.3em;
 	line-height: 1.4em;
 	margin: 20px 0;
+	padding-bottom: 30px;
+}
+
+.btn {
+	border: 3px solid #E0CB77;
+	text-decoration: none;
+	color: #FFF;
+	padding: 1.4rem 4rem;
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	border-radius: 2px;
+	font-family: sans-serif;
+	font-weight: 100;
+
+}
+
+.recent-projects {
+	overflow: auto;
+	padding: 50px 0;
+}
+
+.projects-row {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.project {
+	background-color: gray;
+	float: left;
+	height: 200px;
+	width: 33.3333333%;
+	outline: solid 1px red;
+}
+
+.story {
+	background-color: pink;
+	padding: 50px;
+}
+
+.story-details {
+	border: solid 1px orange;
+	height: 400px;
+	width: 50%;
+}
+
+.what-i-do {
+	margin: 0 auto;
+	overflow: auto;
+	width: 90%;
+	padding: 50px;
+}
+
+.particular-thing {
+	width: 25%;
+	float: left;
+	outline: solid 1px red;
+	height: 200px;
+	background-color: green;
+
+}
+
+.quote {
+	background-color: blue;
+	padding: 50px;
+	height: 200px;
+}
+
+.vader-quote {
+	border: solid 1px white;
+	height: 200px;
+	width: 85%;
+	margin: auto;
+}
+
+.resources {
+	margin: 0 auto;
+	overflow: auto;
+	width: 90%;
+	padding: 50px;
+}
+
+.resource-item {
+	width: 50%;
+	float: left;
+	outline: solid 1px black;
+	height: 200px;
+}
+
+.social-media {
+	margin: 0 auto;
+	overflow: auto;
+	width: 90%auto;
+	padding: 50px;
+}
+
+.social-media-button {
+	width: 25%;
+	float: left;
+	background-color: orange;
+	outline: solid 1px blue;
+	height: 200px;
 }
