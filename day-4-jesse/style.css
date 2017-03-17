@@ -147,8 +147,9 @@ nav li a {
 
 .recent-projects {
 	overflow: auto;
-	padding: 50px 50px;
+	padding: 50px 0;
 	max-width: 1300px;
+
 }
 
 .projects-row {
