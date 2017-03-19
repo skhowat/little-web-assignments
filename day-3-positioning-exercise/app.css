@@ -57,8 +57,8 @@ table {
 
 .outer-box {
   border: solid 2px #CECFD5;
-  height: 820px;
-  width: 560px;
+  height: 640px;
+  width: 592px;
   position: relative;
   border-radius: 10px;
 }
@@ -75,14 +75,37 @@ table {
 }
 
 h3 {
-  background-color: red;
-  height: 130px;
-  width: 130px;
-  position: relative;
-  right: -475px;
-  top: 65px;
-  border-radius: 100%;
-  display: inline-block;
   text-align: center;
-  vertical-align: middle;
+  color: white;
+	font-family: Tahoma;
+	font-size: 55px;
+	margin: 35px;
+}
+
+h1 {
+	font-family: Arial;
+	color: #37B652;
+	font-size: 40px;
+	font-weight: bold;
+	position: absolute;
+	left: 74px;
+	top: 75px;
+}
+
+h2 {
+	font-family: sans-serif;
+	color: #9497A5;
+	font-size: 30px;
+	font-weight: bold;
+	position: absolute;
+	left: 74px;
+	top: 180px;
+}
+
+ul {
+	position: absolute;
+	top: 250px;
+	left: 74px;
+	font-family: 'Open Sans', sans-serif;;
+	font-size: 30px;
 }
