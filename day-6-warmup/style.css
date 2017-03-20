@@ -110,3 +110,34 @@ table {
   float: left;
   width: 33.3333333%;
 }
+
+@media (max-width: 800px) {
+
+    .bottom-left {
+      float: none;
+      width: auto;
+    }
+
+    .bottom-middle {
+      float: none;
+      width: auto;
+    }
+
+    .bottom-right {
+      float: none;
+      width: auto;
+    }
+}
+
+@media (max-width: 600px) {
+  .top-left {
+    float: none;
+    width: auto;
+  }
+
+  .top-right {
+    float: none;
+    width: auto;
+  }
+
+}
