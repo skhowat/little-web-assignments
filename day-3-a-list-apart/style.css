@@ -54,7 +54,7 @@ table {
 .container {
   background-color: white;
   max-width: 750px;
-  margin: 0 auto 0 auto;
+  margin: -15px auto 0 auto;
   text-align: center;
 }
 

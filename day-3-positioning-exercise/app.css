@@ -108,4 +108,8 @@ ul {
 	left: 74px;
 	font-family: 'Open Sans', sans-serif;;
 	font-size: 30px;
+	list-style-type: square;
+	list-style-position: inside;
+	color: #078ACD;
+	line-height: 1.5em;
 }
