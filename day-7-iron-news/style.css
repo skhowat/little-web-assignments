@@ -135,3 +135,21 @@ li {
   font-size: 10px;
   margin-left: 37px;
 }
+
+.more {
+  color: black;
+  padding-left: 38px;
+  padding-top: 15px;
+  padding-bottom: 12px;
+  border-bottom: solid 3px black;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 11px;
+}
+
+.footer-divider {
+  color: gray;
+}
