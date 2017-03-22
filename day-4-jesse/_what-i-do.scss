@@ -1,0 +1,47 @@
+
+.what-i-do {
+	margin: 0 auto;
+	overflow: auto;
+	width: 90%;
+	padding: 40px;
+}
+
+.particular-thing {
+	width: 22%;
+	float: left;
+	outline: solid 1px red;
+	min-height: 402px;
+	text-align: center;
+	margin: 30px 10px;
+}
+
+.particular-thing img {
+	max-width: 130px;
+}
+
+.particular-thing h3 {
+	font-size: 1.7em;
+	line-height: 4em;
+	font-weight: 700;
+}
+
+.particular-thing p {
+	font-family: sans-serif;
+	font-weight: 100;
+	line-height: 2.3em;
+}
+
+
+@media (max-width: 1100px) {
+	.particular-thing {
+		float: left;
+		width: 45%;
+	}
+}
+
+@media (max-width: 600px) {
+	.particular-thing {
+		float: none;
+		width: 90%;
+	}
+}
