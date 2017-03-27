@@ -1,0 +1,36 @@
+footer {
+  clear: both;
+  background-color: #D6D4D4;
+  height: 144px;
+}
+
+.footer-info {
+  width: 90%;
+  overflow: auto;
+  margin: 0 auto;
+
+}
+
+.legal {
+  float: left;
+  width: 40%;
+  min-height: 96px;
+  background-color: gray;
+  margin-top: 24px;
+}
+
+.tools {
+  float: left;
+  width: 40%;
+  min-height: 96px;
+  background-color: gray;
+  margin-top: 24px;
+}
+
+.social-media {
+  float: left;
+  width: 20%;
+  min-height: 96px;
+  background-color: gray;
+  margin-top: 24px;
+}

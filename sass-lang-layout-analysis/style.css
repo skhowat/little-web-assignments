@@ -60,8 +60,7 @@ table {
   width: 90%;
   margin: 0 5% 0 5%;
   padding-top: 24px;
-  padding-bottom: 24px;
-  background-color: gray; }
+  padding-bottom: 24px; }
 
 .site-brand {
   width: 23.40426%;
@@ -69,12 +68,12 @@ table {
   margin-right: 2.12766%; }
 
 .logo {
-  background-color: pink;
+  background-color: #C6538C;
   width: 128px;
   height: 96px; }
 
 .nav {
-  background-color: pink;
+  background-color: #C6538C;
   float: right;
   width: 74.466666%;
   height: 48px;
@@ -82,23 +81,75 @@ table {
 
 .page-header {
   clear: both;
-  background-color: #FFF28E;
+  background-color: #808C99;
   height: 72px;
   margin-bottom: 24px; }
 
 .intro {
-  background-color: gray;
   margin: auto 5% auto 5%;
   width: 90%;
   min-height: 203px; }
 
 .glasses {
-  background-color: pink;
+  background-color: #669999;
   float: left;
   width: 44%;
-  margin-right: 5%; }
+  margin-right: 5%;
+  height: 203px; }
 
 .tagline {
-  background-color: pink;
+  background-color: #669999;
   float: left;
-  width: 51%; }
+  width: 51%;
+  height: 203px; }
+
+.current-release {
+  height: 21.453px;
+  background-color: #C6538C;
+  padding: 12px 0 12px 0;
+  margin-top: 24px; }
+
+.features {
+  width: 90%;
+  height: 360px;
+  margin: 0 auto 0 auto;
+  padding-top: 24px;
+  padding-bottom: 24px; }
+
+.features li {
+  background-color: #808C99;
+  float: left;
+  width: 31%;
+  min-height: 168px;
+  margin: 1%; }
+
+footer {
+  clear: both;
+  background-color: #D6D4D4;
+  height: 144px; }
+
+.footer-info {
+  width: 90%;
+  overflow: auto;
+  margin: 0 auto; }
+
+.legal {
+  float: left;
+  width: 40%;
+  min-height: 96px;
+  background-color: gray;
+  margin-top: 24px; }
+
+.tools {
+  float: left;
+  width: 40%;
+  min-height: 96px;
+  background-color: gray;
+  margin-top: 24px; }
+
+.social-media {
+  float: left;
+  width: 20%;
+  min-height: 96px;
+  background-color: gray;
+  margin-top: 24px; }
