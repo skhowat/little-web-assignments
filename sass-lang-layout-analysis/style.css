@@ -48,10 +48,57 @@ table {
 .class {
   min-height: 100%;
   margin: 0 auto;
-  height: auto;
-  position: relative; }
+  height: auto; }
 
 .alert {
   background-color: #003366;
   height: 48px;
   color: white; }
+
+.banner {
+  height: 96px;
+  width: 90%;
+  margin: 0 5% 0 5%;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-color: gray; }
+
+.site-brand {
+  width: 23.40426%;
+  float: left;
+  margin-right: 2.12766%; }
+
+.logo {
+  background-color: pink;
+  width: 128px;
+  height: 96px; }
+
+.nav {
+  background-color: pink;
+  float: right;
+  width: 74.466666%;
+  height: 48px;
+  margin-top: 18px; }
+
+.page-header {
+  clear: both;
+  background-color: #FFF28E;
+  height: 72px;
+  margin-bottom: 24px; }
+
+.intro {
+  background-color: gray;
+  margin: auto 5% auto 5%;
+  width: 90%;
+  min-height: 203px; }
+
+.glasses {
+  background-color: pink;
+  float: left;
+  width: 44%;
+  margin-right: 5%; }
+
+.tagline {
+  background-color: pink;
+  float: left;
+  width: 51%; }
