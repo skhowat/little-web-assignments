@@ -76,8 +76,8 @@ table {
   background-color: #C6538C;
   float: right;
   width: 74.466666%;
-  height: 48px;
-  margin-top: 18px; }
+  height: 72px;
+  margin-top: 12px; }
 
 .page-header {
   clear: both;
@@ -111,7 +111,7 @@ table {
 
 .features {
   width: 90%;
-  height: 360px;
+  min-height: 360px;
   margin: 0 auto 0 auto;
   padding-top: 24px;
   padding-bottom: 24px; }
@@ -126,11 +126,10 @@ table {
 footer {
   clear: both;
   background-color: #D6D4D4;
-  height: 144px; }
+  min-height: 144px; }
 
 .footer-info {
   width: 90%;
-  overflow: auto;
   margin: 0 auto; }
 
 .legal {
@@ -153,3 +152,55 @@ footer {
   min-height: 96px;
   background-color: gray;
   margin-top: 24px; }
+
+@media (max-width: 1024px) {
+  .nav {
+    height: 60px;
+    margin-top: 18px; } }
+
+@media (max-width: 832px) {
+  .current-release {
+    height: 69.453px; } }
+
+@media (max-width: 766px) {
+  .banner {
+    height: 69px;
+    padding-top: 12px;
+    padding-bottom: 12px; }
+  .logo {
+    width: 64px;
+    height: 48px; }
+  .nav {
+    width: 48px;
+    height: 48px;
+    margin-top: 0; }
+  .page-header {
+    height: 36px; }
+  .glasses {
+    float: none;
+    height: 240px;
+    margin: 0 auto 24px auto; }
+  .tagline {
+    float: none;
+    width: 600px;
+    height: 72px;
+    margin: 0 auto; }
+  .features li {
+    float: none;
+    width: 100%;
+    min-height: 120px; }
+  .legal {
+    float: none;
+    height: 40px;
+    width: 100%;
+    margin-top: 10px; }
+  .tools {
+    float: none;
+    height: 42px;
+    width: 100%;
+    margin-top: 10px; }
+  .social-media {
+    float: none;
+    height: 57px;
+    width: 100%;
+    margin-top: 10px; } }
