@@ -1,0 +1,35 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="lib/mocha.css" rel="stylesheet" />
+  <link href="lib/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="lab-intro">
+    <header>
+      <h1>Labs - String Fun</h1>
+    </header>
+
+    <div class="intro-content">
+      <p>Learning how to use and manipulate strings is important in any programming language. Let's dig in!</p>
+    </div>
+  </div>
+  <div id="mocha"></div>
+
+  <script src="lib/jquery.js"></script>
+  <script src="lib/expect-0-3-1.js"></script>
+  <script src="lib/should.js"></script>
+  <script src="lib/mocha.js"></script>
+  <script src="lib/chai.js"></script>
+
+  <script>mocha.setup('bdd')</script>
+  <script src="stringfun.js"></script>
+  <script src="test.stringfun.js"></script>
+  <script>
+    mocha.checkLeaks();
+    mocha.globals(['jQuery']);
+    mocha.run();
+  </script>
+</body>
+</html>
