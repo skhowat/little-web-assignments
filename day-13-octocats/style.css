@@ -61,11 +61,24 @@ table {
   float: left;
 }
 
+ .image-container {
+	display: block;
+}
+
 .octocat-image {
   width: 100%;
   border: solid 1px #D0D0D0;
+	display: block;
 }
 
+.arrow {
+	width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #D0D0D0;
+  float: right;
+}
 
 .image-footer {
   clear: both;
@@ -99,4 +112,12 @@ table {
 a {
   color: black;
   text-decoration: none;
+}
+
+@media (max-width: 775px) {
+	.octocat {
+		width: 60%;
+		float: none;
+		margin: 0 auto;
+	}
 }
