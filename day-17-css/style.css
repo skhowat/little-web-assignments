@@ -48,20 +48,48 @@ table {
 }
 
 
-
-li {
-  border: solid 3px black;
+.cool-box {
+  background-color: red;
   height: 100px;
   width: 100px;
-  text-align: center;
-  line-height: 100px;
-  margin: 10px;
-  border-radius: 50%;
-  float: left;
+  transition: 2s;
+}
+
+.cool-box:hover {
+  background-color: yellow;
+  height: 400px;
+  width: 400px;
 }
 
 
-.on {
-  background-color: #CAFEC9;
-  border-color: #62E361;
+
+
+
+.animate-me {
+
+  width: 50px;
+  height: 50px;
+  background-color: teal;
+}
+
+.do-the-animation {
+  animation-duration: 3s;
+  animation-name: doThing;
+}
+
+@keyframes doThing {
+  from {
+    margin-left: 100%;
+    margin-top: 0;
+  }
+
+  80% {
+     margin-left: 90%;
+     margin-top: 400px;
+   }
+
+  to {
+    margin-left: 0%;
+    margin-top: 100px;
+  }
 }

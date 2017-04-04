@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="style.css" rel="Stylesheet" />
+    <title></title>
+  </head>
+  <body>
+
+    <div class='cool-box'>
+    </div>
+
+    <div class='animate-me'></div>
+
+    <script>
+
+      var animateableBox = document.querySelector('.animate-me');
+      animateableBox.addEventListener('click', function() {
+        animateableBox.classList.toggle('do-the-animation');
+      });
+
+    </script>
+
+  </body>
+</html>
