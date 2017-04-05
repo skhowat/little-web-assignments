@@ -1,0 +1,122 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+  background-color: #ECE5D3;
+  min-height: 2000px;
+}
+
+h1 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 40px;
+  height: 50px;
+  width: 200px;
+  margin: auto;
+  background-color: #C42829;
+  text-align: center;
+  padding: 50px;
+  transition: height 2s, width 2s, padding 2s;
+}
+
+.header-transition {
+  height: 25px;
+  width: 100px;
+  padding: 20px;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #A2B8A3;
+  text-align: center;
+  padding: 25px;
+}
+
+.corners {
+  background-color: pink;
+  height: 200px;
+  width: 400px;
+}
+
+#top-left {
+  position: fixed;
+  top: 0;
+  left: 0px;
+  /*transition: left 2s;*/
+}
+
+.top-left-transition {
+  background-color: blue;
+  left: -100px;
+}
+
+#top-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: right 2s;
+}
+
+#bottom-left {
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  transition: left 2s;
+}
+
+#bottom-right {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  transition: right 2s;
+}
