@@ -41,6 +41,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+
+
+
 nav {
   overflow: auto;
   padding: 17px 40px;
@@ -70,6 +73,19 @@ nav li a {
   float: left;
   height: 34px;
   margin: 0; }
+
+.nav-scroll {
+  overflow: auto;
+  padding: 17px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: black;
+  opacity: .5;
+}
+
 
 .hero {
   background-image: url("http://jesseshowalter.com/assets/images/jesse-jump.jpg");
