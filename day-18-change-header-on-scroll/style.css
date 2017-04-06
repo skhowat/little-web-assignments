@@ -58,65 +58,86 @@ h1 {
   left: 0;
   right: 0;
   top: 40px;
-  height: 50px;
-  width: 200px;
+  /*height: 50px;*/
+  width: 300px;
   margin: auto;
-  background-color: #C42829;
+	background-image: url('logo-background.png');
+	background-size: 100%;
+  /*background-color: #C42829;*/
   text-align: center;
-  padding: 50px;
+  padding: 37px 0 37px 0;
   transition: height 2s, width 2s, padding 2s;
 }
 
 .header-transition {
-  height: 25px;
-  width: 100px;
-  padding: 20px;
+  /*height: 25px;*/
+  width: 200px;
+  padding: 22px 0 22px 0;
 }
 
 nav {
   position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background-color: #A2B8A3;
   text-align: center;
   padding: 25px;
 }
 
-.corners {
-  background-color: pink;
-  height: 200px;
-  width: 400px;
-}
+
 
 #top-left {
   position: fixed;
-  top: 0;
+	width: 400px;
+	height: 320px;
+  top: 0px;
   left: 0px;
-  /*transition: left 2s;*/
+  transition: margin-left 2s, margin-top 2s;
 }
 
 .top-left-transition {
-  background-color: blue;
-  left: -100px;
+  margin-left: -30px;
+	margin-top: -20px;
 }
 
 #top-right {
   position: fixed;
-  top: 0;
-  right: 0;
-  transition: right 2s;
+	width: 500px;
+	height: 320px;
+  top: 0px;
+  right: 0px;
+  transition: margin-right 2s, margin-top 2s;
+}
+
+.top-right-transition {
+  margin-right: -30px;
+	margin-top: -20px;
 }
 
 #bottom-left {
   position: fixed;
+	width: 430px;
+	height: 260px;
   bottom: 50px;
-  left: 0;
-  transition: left 2s;
+  left: 0px;
+  transition: margin-left 2s;
+}
+
+.bottom-left-transition {
+  margin-left: -60px;
 }
 
 #bottom-right {
   position: fixed;
+	width: 320px;
+	height: 260px;
   bottom: 50px;
-  right: 0;
-  transition: right 2s;
+  right: 0px;
+  transition: margin-right 2s;
+}
+
+.bottom-right-transition {
+  margin-right: -60px;
 }

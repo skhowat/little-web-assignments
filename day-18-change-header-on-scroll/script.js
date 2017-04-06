@@ -1,23 +1,25 @@
 var head = document.querySelector('h1');
-var headerShrink = false;
-
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 100 && headerShrink === false) {
-    head.classList.add('header-transition');
-    headerShrink = true;
-  }
-  else if (window.scrollY <= 100 && headerShrink === true) {
-    head.classList.remove('header-transition');
-    headerShrink = false;
-  }
-});
-
 var topLeft = document.querySelector('#top-left');
-var topLeftMove = false;
+var topRight = document.querySelector('#top-right');
+var bottomLeft = document.querySelector('#bottom-left');
+var bottomRight = document.querySelector('#bottom-right');
+var moveStuff = false;
 
 window.addEventListener('scroll', function() {
-  if (window.scrollY > 100 && topLeftMove === false) {
+  if (window.scrollY > 100 && moveStuff === false) {
+    head.classList.add('header-transition');
     topLeft.classList.add('top-left-transition');
-    topLeftMove = true;
+    topRight.classList.add('top-right-transition');
+    bottomLeft.classList.add('bottom-left-transition');
+    bottomRight.classList.add('bottom-right-transition');
+    moveStuff = true;
+  }
+  else if (window.scrollY <= 100 && moveStuff === true) {
+    head.classList.remove('header-transition');
+    topLeft.classList.remove('top-left-transition');
+    topRight.classList.remove('top-right-transition');
+    bottomLeft.classList.remove('bottom-left-transition');
+    bottomRight.classList.remove('bottom-right-transition');
+    moveStuff = false;
   }
 });
