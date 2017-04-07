@@ -57,6 +57,7 @@ table {
 }
 
 #image-box {
+  background-image: url('pic1.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -65,25 +66,11 @@ table {
   width: 500px;
 }
 
-.pic-one {
-  background-image: url('pic1.jpg');
+#caption {
+  text-align: center;
+  font-family: sans-serif;
 }
 
-.pic-two {
-  background-image: url('pic2.jpg');
-}
-
-.pic-three {
-  background-image: url('pic3.jpg');
-}
-
-.pic-four {
-  background-image: url('pic4.jpg');
-}
-
-.pic-five {
-  background-image: url('pic5.jpg');
-}
 
 .buttons {
   width: 120px;
