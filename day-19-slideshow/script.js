@@ -22,7 +22,6 @@ var captions = [
 
 var currentPicIndex = 0;
 
-
 function forward() {
   if (currentPicIndex === pics.length-1) {
     currentPicIndex = 0;
