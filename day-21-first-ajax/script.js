@@ -17,6 +17,16 @@ promise.done(function(data) {
     name.textContent = data.results[i].name;
     anLI.appendChild(name);
 
+    var films = document.createElement('div');
+
+      if (data.results[i].films.length !== 1){
+        films.textContent = 'Appears in ' + data.results[i].films.length + ' films';
+      }
+      else {
+        films.textContent = 'Appears in ' + data.results[i].films.length + ' film';
+      }
+
+    anLI.appendChild(films);
 
     var genderDiv = document.createElement('div');
     genderDiv.textContent = data.results[i].gender;

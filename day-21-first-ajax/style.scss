@@ -1,11 +1,4 @@
 @import 'reset';
-
-li {
-  border: solid 1px black;
-  padding: 10px;
-  margin: 5px;
-}
-
-h2 {
-  font-weight: bold;
-}
+@import 'people';
+@import 'films';
+@import 'planets';

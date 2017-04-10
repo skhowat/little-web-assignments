@@ -45,10 +45,56 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-li {
+#people-list li {
   border: solid 1px black;
   padding: 10px;
   margin: 5px; }
 
-h2 {
+#people-list h2 {
   font-weight: bold; }
+
+nav {
+  background-color: black;
+  padding: 20px; }
+
+nav a {
+  margin: 15px;
+  color: yellow;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: sans-serif; }
+
+.films-page {
+  background-color: black; }
+
+.films li {
+  margin: 10px;
+  color: yellow;
+  font-family: sans-serif;
+  width: 50%;
+  margin: 30px auto;
+  line-height: 1.25em; }
+
+.films h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center; }
+
+.films h2 {
+  font-weight: bold;
+  text-align: center; }
+
+.planets-list li {
+  border: solid 1px black;
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  float: left; }
+
+.planets-list h1 {
+  margin-top: 60px;
+  text-align: center;
+  font-weight: bold;
+  font-family: sans-serif; }

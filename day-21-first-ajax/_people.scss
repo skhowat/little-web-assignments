@@ -1,0 +1,22 @@
+#people-list li {
+  border: solid 1px black;
+  padding: 10px;
+  margin: 5px;
+}
+
+#people-list h2 {
+  font-weight: bold;
+}
+
+nav {
+  background-color: black;
+  padding: 20px;
+}
+
+nav a {
+  margin: 15px;
+  color: yellow;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
