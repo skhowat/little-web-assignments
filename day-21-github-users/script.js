@@ -1,24 +1,33 @@
-var promise = $.ajax({
-  url: 'https://api.github.com/search/users?q=stevie'
-});
+var users = document.querySelector('#users');
 
-console.log(promise);
+var searchQuery = document.querySelector('#search-query');
 
-promise.done(function(data) {
-  console.log('got the data!', data);
+searchQuery.addEventListener('keyup', function(evt) {
+  if (evt.keyCode !== 13) {
+    return;
+  }
 
-  console.log(data.items.length);
+  users.innerHTML = '';
+
+  var promise = $.ajax({
+    url: 'https://api.github.com/search/users?q=' + searchQuery.value
+  });
 
 
-  var users = document.querySelector('#users');
+  promise.done(function(data) {
+    console.log('got the data!', data);
+
+    console.log(data.items.length);
+
+
+
     for(i=0; i<data.items.length; i++) {
 
       var anLI = document.createElement('li');
-
+      
       var avatar = document.createElement('img');
       avatar.src = data.items[i].avatar_url;
-      // avatar.height = "50";
-      // avatar.width = "50";
+
       anLI.appendChild(avatar);
 
       var userLink = document.createElement('a');
@@ -28,5 +37,7 @@ promise.done(function(data) {
 
       users.appendChild(anLI);
     }
+
+  });
 
 });
