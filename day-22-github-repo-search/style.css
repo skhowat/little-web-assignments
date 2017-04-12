@@ -51,7 +51,7 @@ table {
 
 #repos li {
   border: solid 1px black;
-  margin-left: 20px;
+  margin: 20px;
   width: 380px;
   font-family: sans-serif;
   padding: 10px; }
@@ -64,4 +64,24 @@ table {
   font-size: 1.25em; }
 
 #owner {
+  color: gray; }
+
+nav {
+  margin-left: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  display: none;
+  color: red; }
+
+#page-number {
+  background-color: red;
+  color: white;
+  width: 25px;
+  height: 20px;
+  padding-top: 5px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 8px; }
+
+.grayed {
   color: gray; }

@@ -1,27 +1,3 @@
 @import "reset";
-
-#search-query {
-  margin: 20px;
-  width: 400px;
-}
-
-#repos li {
-  border: solid 1px black;
-  margin-left: 20px;
-  width: 380px;
-  font-family: sans-serif;
-  padding: 10px;
-}
-
-#repos a {
-  display: block;
-}
-
-#repo-name {
-  font-weight: bold;
-  font-size: 1.25em;
-}
-
-#owner {
-  color: gray;
-}
+@import "repos-list";
+@import "navigation";
