@@ -8,6 +8,9 @@ for (var i=1; i<lines.length-1; i++){
   var line = lines[i];
   var info = line.split(',');
 
-  console.log(info[3] + ': ' + info[32] + '\n');
+  if (info[32] !== 'NULL') {
+    console.log(info[3] + ': ' + info[32] + '\n');
+  }
+
   }
 })
