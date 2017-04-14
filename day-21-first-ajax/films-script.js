@@ -14,14 +14,16 @@ promise.done(function(data) {
 function putOnPage(arr) {
   var template = document.querySelector('#film-template').innerHTML;
 
-  for (var i=0; i<arr.results.length; i++) {
-    arr.results[i].release_date = arr.results[i].release_date.substr(0,4);
-  }
-
   var totalHtml = '';
 
   for (var i=0; i<arr.results.length; i++) {
-    var html = Mustache.render(template, arr.results[i]);
+
+    var html = Mustache.render(template, {
+      title: arr.results[i].title,
+      release_date: arr.results[i].release_date.substr(0,4),
+      opening_crawl: arr.results[i].opening_crawl
+    });
+
     totalHtml += html;
   }
 
