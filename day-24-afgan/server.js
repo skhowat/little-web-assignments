@@ -31,8 +31,6 @@ app.get('/api/popdata', function(req, res) {
   })
 
 
-
-
 });
 
 app.listen(3101, function() {
