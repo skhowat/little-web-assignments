@@ -22,23 +22,7 @@ function ajaxCall() {
     totalResults = data.total_count;
     pageCount = Math.ceil(totalResults/30);
 
-    for (var i=0; i<data.items.length; i++) {
-      var anLI = document.createElement('li');
-
-      var repoName = document.createElement('a');
-      repoName.href = data.items[i].html_url;
-      repoName.textContent = data.items[i].name;
-      repoName.id = 'repo-name';
-      anLI.appendChild(repoName);
-
-      var owner = document.createElement('a');
-      owner.href = data.items[i].owner.html_url;
-      owner.textContent = 'by ' + data.items[i].owner.login;
-      owner.id = 'owner';
-      anLI.appendChild(owner);
-
-      repos.appendChild(anLI);
-    }
+    putOnPage(data);
 
     nav.style.display = 'block';
     pageNumber.innerHTML = page;
@@ -60,6 +44,18 @@ function ajaxCall() {
     }
 
   });
+}
+
+function putOnPage(arr) {
+  var template = document.querySelector('#search-results').innerHTML;
+
+  var totalHtml = '';
+  for (var i=0; i<arr.items.length; i++) {
+    var html = Mustache.render(template, arr.items[i]);
+    totalHtml += html;
+  }
+
+  repos.innerHTML = totalHtml;
 }
 
 

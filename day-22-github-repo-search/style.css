@@ -51,7 +51,7 @@ table {
 
 #repos li {
   border: solid 1px black;
-  margin: 20px;
+  margin-left: 20px;
   width: 380px;
   font-family: sans-serif;
   padding: 10px; }
@@ -68,6 +68,7 @@ table {
 
 nav {
   margin-left: 20px;
+  margin-bottom: 10px;
   font-family: sans-serif;
   font-weight: bold;
   display: none;
