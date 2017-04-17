@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Image Gallery</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <div id="container">
+      <img id="image-full-size"></img>
+
+      <div id="description">{{description}}</div>
+
+      <ul id="thumbnail-list">
+      </ul>
+
+    </div>
+
+    <script type="text/html", id="thumbnail-template">
+      <li data-index="{{index}}"><img src="{{thumbnail}}"></img></li>
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="gallery.js"></script>
+  </body>
+</html>

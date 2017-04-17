@@ -1,5 +1,5 @@
 {
-  "name": "day-24-cpsc-violations",
+  "name": "day-31-image-gallery",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.5.6",
-    "express": "^4.15.2"
+    "express": "^4.14.0"
   }
 }
