@@ -25,9 +25,15 @@ promise.done(function(data) {
 });
 
 thumbnailList.addEventListener('click', function(evt) {
+  var previouslySelected = document.querySelector('.selected');
+  if (previouslySelected !== null) {
+    previouslySelected.classList.remove('selected');
+  }
+
   if (evt.target.tagName === 'IMG') {
     var index = evt.target.getAttribute('data-index');
     var picInfo = galleryData[index];
     fullSizeBox.innerHTML = Mustache.render(fullSizeTemplate, picInfo);
+    evt.target.classList.add('selected');
   }
 });
