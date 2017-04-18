@@ -8,9 +8,10 @@
   <body>
 
     <div id="container">
-      <img id="image-full-size"></img>
 
-      <div id="description">{{description}}</div>
+      <div id="full-size-box">
+        <h1>Select a picture</h1>
+      </div>
 
       <ul id="thumbnail-list">
       </ul>
@@ -18,11 +19,16 @@
     </div>
 
     <script type="text/html", id="thumbnail-template">
-      <li data-index="{{index}}"><img src="{{thumbnail}}"></img></li>
+      <li><img src="{{thumbnail}}" data-index="{{index}}"></img></li>
+    </script>
+
+    <script type="text/html", id="full-size-template">
+      <img id="image-full-size" src="{{fullSize}}"></img>
+      <div id="description">{{description}}</div>
     </script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="gallery.js"></script>
   </body>

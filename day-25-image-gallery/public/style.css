@@ -51,12 +51,22 @@ table {
 #container {
 	width: 70%;
 	margin: 30px auto 0 auto;
-	background-color: gray;
+}
+
+#full-size-box {
+	min-height: 400px;
+}
+
+#full-size-box h1 {
+	font-size: 2em;
+	text-align: center;
 }
 
 #image-full-size {
 	display: block;
 	margin: 0 auto;
+	max-width: 800px;
+	max-height: 400px;
 }
 
 #description {
@@ -70,6 +80,13 @@ table {
 }
 
 #thumbnail-list li {
+	box-sizing: border-box;
 	float: left;
-	margin: 10px;
+	width: 20%;
+	padding: 10px;
+	text-align: center;
+}
+
+.selected {
+	border: solid 3px black;
 }

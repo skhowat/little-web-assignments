@@ -1,35 +1,33 @@
 var imageFull = document.querySelector('#image-full-size');
 var description = document.querySelector('#description');
-var thumbailList = document.querySelector('#thumbnail-list');
+var thumbnailList = document.querySelector('#thumbnail-list');
+var fullSizeBox = document.querySelector('#full-size-box');
+var thumbnailTemplate = document.querySelector('#thumbnail-template').innerHTML;
+var fullSizeTemplate = document.querySelector('#full-size-template').innerHTML;
 
 var promise = $.ajax({
   url: '/api/pics'
 });
 
+var galleryData = [];
 promise.done(function(data) {
-  console.log('got the data', data);
-  putOnPage(data);
+  galleryData = data.pictures;
+  console.log(galleryData);
+
+  thumbnailListHtml = '';
+  galleryData.forEach(function(item) {
+    thumbnailListHtml += Mustache.render(thumbnailTemplate, {
+      index: galleryData.indexOf(item),
+      thumbnail: item.thumbnail
+    });
+  });
+  thumbnailList.innerHTML = thumbnailListHtml;
 });
 
-
-function putOnPage(arr) {
-  var thumbnailTemplate = document.querySelector('#thumbnail-template').innerHTML;
-
-  console.log(thumbnailTemplate);
-
-  var totalHtml = '';
-
-  for (var i=0; i<arr.pictures.length; i++) {
-    console.log(arr.pictures[i]);
-
-    var html = Mustache.render(thumbnailTemplate, {
-      index: i,
-      fullSize: arr.pictures[i].fullSize,
-      description: arr.pictures[i].description,
-      thumbnail: arr.pictures[i].thumbnail
-    });
-    totalHtml += html;
+thumbnailList.addEventListener('click', function(evt) {
+  if (evt.target.tagName === 'IMG') {
+    var index = evt.target.getAttribute('data-index');
+    var picInfo = galleryData[index];
+    fullSizeBox.innerHTML = Mustache.render(fullSizeTemplate, picInfo);
   }
-
-  thumbailList.innerHTML = totalHtml;
-}
+});
