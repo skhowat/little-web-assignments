@@ -34,7 +34,7 @@ var jokes = [
   'Cars look both ways before {name} crosses the street.',
   '{name} can unscramble an egg.',
   'In space {name} can hear you scream.',
-  '{name}can follow you into a revolving door and come out ahead of you.'
+  '{name} can follow you into a revolving door and come out ahead of you.'
 ];
 
 // console.log(jokes[0].message);
