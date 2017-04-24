@@ -47,9 +47,19 @@ table {
 	border-spacing: 0;
 }
 
+
+
+
+
+body {
+  background-color: #A4F2F4;
+}
+
+
 #all-the-things {
-  width: 50%;
+  width: 450px;
   margin: 0 auto;
+  overflow: auto;
 }
 
 .pictures {
@@ -80,14 +90,19 @@ table {
 #win {
   display: none;
   text-align: center;
-  font-family: sans-serif;
   font-weight: bold;
   font-size: 2em;
   color: red;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 h1, h2 {
   margin-top: 20px;
   text-align: center;
+  color: #822CB7;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
 }

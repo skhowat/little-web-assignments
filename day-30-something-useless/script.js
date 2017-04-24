@@ -20,8 +20,6 @@ function animation(selector) {
     }
   });
 
-
-
   this.el.addEventListener('animationstart', function() {
     self.animating = true;
   });
@@ -42,8 +40,6 @@ var ladybug6 = new animation('#ladybug-6');
 var ladybug7 = new animation('#ladybug-7');
 var ladybug8 = new animation('#ladybug-8');
 var ladybug9 = new animation('#ladybug-9');
-var allLadybugs = document.querySelector('.pictures');
-
 
 
 
