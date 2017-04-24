@@ -99,3 +99,8 @@ body {
   padding: 5px;
   text-align: left;
 }
+
+#companions-conditional {
+  margin-top: 15px;
+  display: none;
+}
