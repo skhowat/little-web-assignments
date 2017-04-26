@@ -9,14 +9,23 @@ var noTC = document.querySelector('#travel-with-no');
 var yesTC = document.querySelector('#travel-with-yes');
 var companionsCond = document.querySelector('#companions-conditional');
 var companions = document.querySelector('#companions');
+var form = document.querySelector('.form-area');
+var newForm = document.querySelector('#new-form');
+var formData = document.querySelector('input');
 
-questionOne.style.display = 'block';
-questionTwo.style.display = 'none';
-questionThree.style.display = 'none';
-thanks.style.display = 'none';
-prevButton.style.display = 'none';
-nextButton.style.display = 'inline';
-submitButton.style.display = 'none';
+console.log(formData);
+
+var currentPage = Number(localStorage.getItem('current page'));
+
+nextButton.addEventListener('click', function() {
+  currentPage += 1;
+  checkPage();
+});
+
+prevButton.addEventListener('click', function() {
+  currentPage -= 1;
+  checkPage();
+});
 
 
 function showOne() {
@@ -35,7 +44,6 @@ function showTwo() {
   prevButton.style.display = 'inline';
   questionThree.style.display = 'none';
   thanks.style.display = 'none';
-  // nextButton.style.display = 'inline';
   submitButton.style.display = 'none';
 }
 
@@ -49,39 +57,65 @@ function showThree() {
   prevButton.style.display = 'inline';
 }
 
-nextButton.addEventListener('click', function() {
-  if (questionOne.style.display === 'block') {
-    showTwo();
-  }
-
-  else if (questionTwo.style.display === 'block') {
-    showThree();
-  }
-});
-
-prevButton.addEventListener('click', function() {
-  if (questionTwo.style.display === 'block') {
-    showOne();
-  }
-  else if (questionThree.style.display === 'block') {
-    showTwo();
-  }
-});
-
-
-submitButton.addEventListener('click', function() {
+function showEnd() {
   questionThree.style.display = 'none';
   prevButton.style.display = 'none';
   thanks.style.display = 'block';
   submitButton.style.display = 'none';
+}
+
+submitButton.addEventListener('click', function() {
+  currentPage += 1;
+  showEnd();
 });
 
 questionThree.addEventListener('click', function() {
   if (yesTC.checked === true) {
-
     companionsCond.style.display = 'block';
   }
   else {
     companionsCond.style.display = 'none';
   }
 });
+
+newForm.addEventListener('click', function() {
+  loadPage();
+});
+
+
+
+function checkPage() {
+  if(currentPage === 1) {
+    showOne();
+  }
+
+  if(currentPage === 2) {
+    showTwo();
+  }
+
+  if(currentPage === 3) {
+    showThree();
+  }
+
+  if(currentPage === 4) {
+    showEnd();
+  }
+}
+
+function loadPage() {
+  if (currentPage === 0) {
+    currentPage = 1;
+  }
+  if (currentPage === 4) {
+    currentPage = 1;
+  }
+  checkPage();
+  localStorage.setItem('current page', currentPage);
+}
+
+
+form.addEventListener('click', function() {
+  console.log(currentPage);
+});
+
+window.onLoad = loadPage();
