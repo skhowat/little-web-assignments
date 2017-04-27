@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+.counter-div {
+  margin: 20px;
+  border: solid 1px red;
+  height: 50px;
+  width: 150px;
+  line-height: 50px;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+  width: 45px;
+}
+
+.tick-counter-div {
+  margin: 20px;
+  border: solid 1px red;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.clock-div {
+  margin: 20px;
+  border: solid 1px red;
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.super-clock-div {
+  margin: 20px;
+  border: solid 1px red;
+}
