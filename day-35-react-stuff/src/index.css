@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.toggle-div {
+  color: red;
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+}
