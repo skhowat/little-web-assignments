@@ -30,7 +30,7 @@ Dude.prototype.sayMyName.call(otherDude);
 
 function addStuff() {
   console.log('arguments', arguments);
-  var args = Array.prototype.slice.call(arguments);
+  let args = Array.prototype.slice.call(arguments);
   console.log('args?', args);
 }
 

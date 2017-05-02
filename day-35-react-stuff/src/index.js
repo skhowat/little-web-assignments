@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SwapiPeople from './SwapiPeople.js';
+import Clock from './Clock.js';
+import SuperClock from './SuperClock.js'
 import './index.css';
 
 
@@ -33,6 +35,8 @@ class App extends React.Component {
     return (
       <div>
         <Toggle />
+        <Clock />
+        <SuperClock />
         <SwapiPeople />
       </div>
     );
