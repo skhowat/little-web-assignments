@@ -12,19 +12,20 @@ class App extends Component {
     super();
     this.state = {
       recipes: [],
-      filters: [],
+      filters: []
     };
     this.recipeFilter = '';
     this.filters = [];
 
     this.handleRecipeFilter = this.handleRecipeFilter.bind(this);
     this.handleIngredientFilter = this.handleIngredientFilter.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   makeAjaxCall() {
     var toCall;
     if (this.filters.length === 0 && this.recipeFilter === '') {
-      toCall = "/api/";
+      toCall = "";
     }
     if (this.filters.length === 0 && this.recipeFilter !== '') {
       toCall = "/api/?q=" + this.recipeFilter;
@@ -77,6 +78,14 @@ class App extends Component {
     this.makeAjaxCall();
   }
 
+  handleClick(index) {
+    let copy = this.state.filters.slice();
+    copy.splice(index, 1);
+    this.filters = copy;
+    this.setState({filters: copy});
+    this.makeAjaxCall();
+  }
+
   render() {
     return (
       <div>
@@ -84,7 +93,7 @@ class App extends Component {
         <div className="App">
           <Query onFilter={this.handleRecipeFilter}/>
           <RecipeList recipes={this.state.recipes}/>
-          <Filter filters={this.state.filters} onFilter={this.handleIngredientFilter}/>
+          <Filter filters={this.state.filters} onFilter={this.handleIngredientFilter} onClick={this.handleClick}/>
           <Footer />
         </div>
     </div>

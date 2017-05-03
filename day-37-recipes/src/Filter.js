@@ -9,8 +9,13 @@ class Filter extends React.Component {
     evt.target.value = '';
   }
 
+  handleClick(i) {
+    console.log('clicked', i);
+    this.props.onClick(i);
+  }
+
   render() {
-    let filteredItems = this.props.filters.map((x, i) => <li key={i + x}>{x}</li>);
+    let filteredItems = this.props.filters.map((x, i) => <li key={i + x} onClick={() => this.handleClick(i)}>{x}</li>);
     return(
       <div className="filter-list">
         <p>Would you also like to filter by ingredients?</p>
