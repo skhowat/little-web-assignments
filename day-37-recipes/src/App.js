@@ -22,12 +22,16 @@ class App extends Component {
   }
 
   makeAjaxCall() {
-    let toCall = `/api/?i=${this.state.filters}&q=${this.recipeFilter}`;
-    // console.log('calling', this.state.filters, toCall);
-    // if (this.recipeFilter !== '' || this.state.filters.length !== 0) {
-    //   console.log(this.state.filters);
-    //   toCall = `/api/?i=${this.state.filters}&q=${this.recipeFilter}`;
-    // }
+    let toCall;
+    console.log('calling', this.state.filters, toCall);
+    if (this.recipeFilter !== '' || this.state.filters.length !== 0) {
+      console.log(this.state.filters);
+      toCall = `/api/?i=${this.state.filters}&q=${this.recipeFilter}`;
+    }
+    else {
+      this.setState({recipes: []});
+      return;
+    }
 
     $.ajax({
       url: toCall
