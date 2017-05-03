@@ -15,7 +15,6 @@ class App extends Component {
       filters: []
     };
     this.recipeFilter = '';
-    this.filters = [];
 
     this.handleRecipeFilter = this.handleRecipeFilter.bind(this);
     this.handleIngredientFilter = this.handleIngredientFilter.bind(this);
@@ -23,22 +22,18 @@ class App extends Component {
   }
 
   makeAjaxCall() {
-    var toCall;
-    if (this.filters.length === 0 && this.recipeFilter === '') {
-      toCall = "";
-    }
-    if (this.filters.length === 0 && this.recipeFilter !== '') {
-      toCall = "/api/?q=" + this.recipeFilter;
-    }
-    if (this.filters.length !== 0 && this.recipeFilter !== '') {
-      toCall = "/api/?i=" + this.filters + "&q=" + this.recipeFilter;
-    }
+    let toCall = `/api/?i=${this.state.filters}&q=${this.recipeFilter}`;
+    // console.log('calling', this.state.filters, toCall);
+    // if (this.recipeFilter !== '' || this.state.filters.length !== 0) {
+    //   console.log(this.state.filters);
+    //   toCall = `/api/?i=${this.state.filters}&q=${this.recipeFilter}`;
+    // }
+
     $.ajax({
       url: toCall
     })
     .done((data) => {
       data = JSON.parse(data);
-      console.log('do I have data?', data);
       let fixedData = data.results.map((x) => {
         if (x.thumbnail === "") {
           return {
@@ -73,17 +68,14 @@ class App extends Component {
   handleIngredientFilter(input) {
     let copy = this.state.filters.slice();
     copy.push(input);
-    this.filters = copy;
-    this.setState({filters: copy});
-    this.makeAjaxCall();
+    this.setState({filters: copy}, () => this.makeAjaxCall());
+
   }
 
   handleClick(index) {
     let copy = this.state.filters.slice();
     copy.splice(index, 1);
-    this.filters = copy;
-    this.setState({filters: copy});
-    this.makeAjaxCall();
+    this.setState({filters: copy}, () => this.makeAjaxCall());
   }
 
   render() {
@@ -92,7 +84,7 @@ class App extends Component {
         <Header />
         <div className="App">
           <Query onFilter={this.handleRecipeFilter}/>
-          <RecipeList recipes={this.state.recipes}/>
+          <RecipeList recipes={this.state.recipes} recipeFilter={this.recipeFilter}/>
           <Filter filters={this.state.filters} onFilter={this.handleIngredientFilter} onClick={this.handleClick}/>
           <Footer />
         </div>

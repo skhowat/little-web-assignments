@@ -10,7 +10,6 @@ class Filter extends React.Component {
   }
 
   handleClick(i) {
-    console.log('clicked', i);
     this.props.onClick(i);
   }
 

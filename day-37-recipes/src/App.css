@@ -140,3 +140,11 @@ input {
 li {
   border: solid 1px #DDDDDD;
 }
+
+.showing-results {
+  margin: 10px 0;
+}
+
+.current-query {
+  font-weight: bold;
+}

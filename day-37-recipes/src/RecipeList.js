@@ -21,8 +21,15 @@ class RecipeList extends React.Component {
       return <RecipeItem thumbnail={x.thumbnail} href={x.href} title={x.title} ingredients={x.ingredients} key={i + x}/>
     });
 
+    let currentQuery;
+
+    if (this.props.recipeFilter !== '') {
+      currentQuery = <div className="showing-results">Showing results for <span className="current-query">{this.props.recipeFilter}</span></div>
+    }
+
     return(
       <ul className="recipe-list">
+        {currentQuery}
         {recipes}
       </ul>
     );
