@@ -115,7 +115,7 @@ table {
   float: left;
   width: 48%;
   min-height: 300px;
-  margin: 0px;
+  margin: 0 0 5px 0;
   padding: 0 1%;
 }
 
@@ -133,9 +133,8 @@ input {
 
 .footer {
   clear: both;
-  min-height: 80px;
-  line-height: 80px;
   border-top: solid 2px black;
+  padding-top: 5px;
 }
 
 li {
