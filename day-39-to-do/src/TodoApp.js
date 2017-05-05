@@ -1,19 +1,37 @@
 import React from 'react';
 import $ from 'jquery';
+import Api from './Api.js';
 
+console.log(Api);
 const bucketId = '7edc93a5-a4bc-47e1-9fa9-979c8a03cecd';
+
 
 class TodoApp extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      inputValue: ''
+      inputValue: '',
+      items: []
     };
+
+  }
+
+  refreshData() {
+    const cb = (data) => {
+      this.setState({
+        items: data.items
+      });
+    };
+    Api.refreshData(cb);
+  }
+
+  componentDidMount() {
+    this.refreshData();
   }
 
   createNewItem(inputText) {
-    console.log(inputText);
+    // console.log(inputText);
     $.ajax({
       url: 'https://spiffy-todo-api.herokuapp.com/api/item?bucketId=' + bucketId,
       method: 'POST',
@@ -22,7 +40,7 @@ class TodoApp extends React.Component {
       }
     })
     .done((data) => {
-      console.log('what do I get back?', data);
+      console.log('what did I post?', data);
     });
   }
 
@@ -32,6 +50,7 @@ class TodoApp extends React.Component {
       this.setState({
         inputValue: ''
       });
+      this.refreshData();
     }
   }
 
@@ -41,13 +60,40 @@ class TodoApp extends React.Component {
     });
   }
 
+  handleDelete(id, evt) {
+    evt.stopPropagation();
+    Api.delete(id, () => this.refreshData());
+  }
+
+  markComplete(id) {
+    console.log('clicked', id)
+    $.ajax({
+      url: `https://spiffy-todo-api.herokuapp.com/api/item/${id}/togglestatus?bucketId=${bucketId}`,
+      method: 'POST'
+    })
+    .done(() => {
+      this.refreshData();
+    });
+  }
+
   render() {
+    const items = this.state.items.map((x) => {
+        const className = x.isComplete ? 'complete' : '';
+
+        return <li key={x.id} onClick={() => this.markComplete(x.id)} className={className}>
+                  {x.text}
+                  <button onClick={(evt) => this.handleDelete(x.id, evt)}>Delete</button>
+                </li>});
     return (
       <div>
         <input
           onKeyUp={(evt) => this.handleKeyUp(evt)}
           onChange={(evt) => this.handleChange(evt)}
-          value={this.state.inputValue} />
+          value={this.state.inputValue}
+          className="listInput"/>
+        <ol className="itemList">
+          {items}
+        </ol>
       </div>
     );
   }

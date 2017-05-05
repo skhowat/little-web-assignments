@@ -1,5 +1,31 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
+  border: solid 3px green;
+  width: 50%;
+}
+
+.complete {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #777;
+}
+
+.listInput {
+  margin: 10px;
+}
+
+.itemList li {
+  margin: 5px;
+  list-style: none;
+  border: solid 1px black;
+}
+
+.itemList {
+  padding: 0;
+}
+
+.itemList button {
+
 }
