@@ -23,7 +23,24 @@ const Api = {
     .done(cb);
   },
 
-  
+  createNewItem: function(inputText, cb) {
+    $.ajax({
+      url: 'https://spiffy-todo-api.herokuapp.com/api/item?bucketId=' + bucketId,
+      method: 'POST',
+      data: {
+        text: inputText
+      }
+    })
+    .done(cb);
+  },
+
+  markComplete: function(id, cb) {
+    $.ajax({
+      url: `https://spiffy-todo-api.herokuapp.com/api/item/${id}/togglestatus?bucketId=${bucketId}`,
+      method: 'POST'
+    })
+    .done(cb);    
+  }
 
 }
 
