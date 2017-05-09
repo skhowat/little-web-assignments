@@ -1,16 +1,17 @@
 import $ from 'jquery';
+import { store, actions } from './Store.js';
 
 const bucketId = '7edc93a5-a4bc-47e1-9fa9-979c8a03cecd';
 
 const Api = {
 
-  refreshData: function(cb) {
+  refreshData: function() {
     $.ajax({
       url: 'https://spiffy-todo-api.herokuapp.com/api/items?bucketId=' + bucketId,
     })
     .done((data) => {
       console.log('refreshed data', data);
-      cb(data);
+      store.dispatch(Object.assign({}, actions.NEW, { items: data.items }));
     });
   },
 
@@ -23,7 +24,7 @@ const Api = {
     .done(cb);
   },
 
-  createNewItem: function(inputText, cb) {
+  createNewItem: function(inputText) {
     $.ajax({
       url: 'https://spiffy-todo-api.herokuapp.com/api/item?bucketId=' + bucketId,
       method: 'POST',
@@ -31,7 +32,7 @@ const Api = {
         text: inputText
       }
     })
-    .done(cb);
+    .done(this.refreshData());
   },
 
   markComplete: function(id, cb) {
@@ -39,7 +40,7 @@ const Api = {
       url: `https://spiffy-todo-api.herokuapp.com/api/item/${id}/togglestatus?bucketId=${bucketId}`,
       method: 'POST'
     })
-    .done(cb);    
+    .done(cb);
   }
 
 }

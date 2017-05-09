@@ -1,18 +1,15 @@
 import React from 'react';
 import Api from './Api.js';
+import { store, actions } from './Store.js';
 
-console.log(Api);
+// console.log(Api);
 
 
 class TodoApp extends React.Component {
 
   constructor() {
     super();
-    this.state = {
-      inputValue: '',
-      items: []
-    };
-
+    this.state = store.getState();
   }
 
   refreshData() {
@@ -25,26 +22,28 @@ class TodoApp extends React.Component {
   }
 
   componentDidMount() {
-    this.refreshData();
+    store.subscribe(() => this.setState(store.getState()));
+    // this.refreshData();
   }
 
-  createNewItem(inputText) {
-    Api.createNewItem(inputText, () => this.refreshData());
-  }
+  // createNewItem(inputText) {
+  //   Api.createNewItem(inputText);
+  // }
 
   handleKeyUp(evt) {
     if (evt.keyCode === 13) {
-      this.createNewItem(this.state.inputValue);
-      this.setState({
-        inputValue: ''
-      });
+      Api.createNewItem(this.state.inputValue);
+      // this.setState({
+      //   inputValue: ''
+      // });
     }
   }
 
   handleChange(evt) {
-    this.setState({
-      inputValue: evt.target.value
-    });
+    // this.setState({
+    //   inputValue: evt.target.value
+    // });
+    store.dispatch(Object.assign({}, actions.INPUT, {inputValue: evt.target.value}));
   }
 
   handleDelete(id, evt) {
