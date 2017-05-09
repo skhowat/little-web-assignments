@@ -2,8 +2,6 @@ import React from 'react';
 import Api from './Api.js';
 import { store, actions } from './Store.js';
 
-// console.log(Api);
-
 
 class TodoApp extends React.Component {
 
@@ -12,50 +10,34 @@ class TodoApp extends React.Component {
     this.state = store.getState();
   }
 
-  refreshData() {
-    const cb = (data) => {
-      this.setState({
-        items: data.items
-      });
-    };
-    Api.refreshData(cb);
-  }
 
   componentDidMount() {
     store.subscribe(() => this.setState(store.getState()));
-    // this.refreshData();
+    Api.refreshData();
   }
 
-  // createNewItem(inputText) {
-  //   Api.createNewItem(inputText);
-  // }
-
   handleKeyUp(evt) {
-    if (evt.keyCode === 13) {
+    if (evt.keyCode === 13 && this.state.inputValue !== '') {
       Api.createNewItem(this.state.inputValue);
-      // this.setState({
-      //   inputValue: ''
-      // });
     }
   }
 
   handleChange(evt) {
-    // this.setState({
-    //   inputValue: evt.target.value
-    // });
     store.dispatch(Object.assign({}, actions.INPUT, {inputValue: evt.target.value}));
   }
 
   handleDelete(id, evt) {
     evt.stopPropagation();
-    Api.delete(id, () => this.refreshData());
+    Api.delete(id);
   }
 
   markComplete(id) {
-    Api.markComplete(id, () => this.refreshData());
+    Api.markComplete(id);
   }
 
   render() {
+    // console.log('state', this.state);
+
     const items = this.state.items.map((x) => {
         const className = x.isComplete ? 'complete' : '';
 

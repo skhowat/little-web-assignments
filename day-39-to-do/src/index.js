@@ -14,6 +14,7 @@ class App extends React.Component {
 
       <Router>
         <div>
+          <div><Link to="/app">ToDo List</Link></div>
           <Route path="/" exact component={Home} />
           <Route path="/app" component={TodoApp} />
           <Route path="/gallery" component={Gallery} />

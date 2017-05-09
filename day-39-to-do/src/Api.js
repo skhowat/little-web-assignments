@@ -7,21 +7,21 @@ const Api = {
 
   refreshData: function() {
     $.ajax({
-      url: 'https://spiffy-todo-api.herokuapp.com/api/items?bucketId=' + bucketId,
+      url: 'https://spiffy-todo-api.herokuapp.com/api/items?bucketId=' + bucketId
     })
     .done((data) => {
-      console.log('refreshed data', data);
-      store.dispatch(Object.assign({}, actions.NEW, { items: data.items }));
+      // console.log('refreshed data', data);
+      store.dispatch(Object.assign({}, actions.REFRESH, { items: data.items }));
     });
   },
 
-  delete: function(id, cb) {
-    console.log('deleting', id);
+  delete: function(id) {
+    // console.log('deleting', id);
     $.ajax({
       url: `https://spiffy-todo-api.herokuapp.com/api/item/${id}?bucketId=${bucketId}`,
       method: 'DELETE'
     })
-    .done(cb);
+    .done(() => this.refreshData());
   },
 
   createNewItem: function(inputText) {
@@ -32,15 +32,19 @@ const Api = {
         text: inputText
       }
     })
-    .done(this.refreshData());
+    .done(() => {
+      store.dispatch(Object.assign({}, actions.CLEAR_INPUT));
+      this.refreshData();
+    });
   },
 
-  markComplete: function(id, cb) {
+  markComplete: function(id) {
+    // console.log('toggling', id);
     $.ajax({
       url: `https://spiffy-todo-api.herokuapp.com/api/item/${id}/togglestatus?bucketId=${bucketId}`,
       method: 'POST'
     })
-    .done(cb);
+    .done(() => this.refreshData());
   }
 
 }

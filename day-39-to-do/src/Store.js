@@ -1,9 +1,8 @@
 import { createStore } from 'redux';
 
-const NEW = {type: 'NEW'};
-const INPUT = {type: 'INPUT'};
-const COMPLETE_TOGGLE = 'COMPLETE_TOGGLE';
-const DELETE = 'DELETE';
+const INPUT = { type: 'INPUT' };
+const REFRESH = { type: 'REFRESH' };
+const CLEAR_INPUT = { type: 'CLEAR_INPUT'};
 
 const initialState = {
   inputValue: '',
@@ -13,13 +12,15 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'INPUT':
-      console.log('input', action.inputValue);
+      // console.log('input', action.inputValue);
       return {...state, inputValue: action.inputValue}
-    case 'NEW':
-      return {...state, items: action.items, inputValue: ''}
+    case 'REFRESH':
+      return {...state, items: action.items}
+    case 'CLEAR_INPUT':
+        return {...state, inputValue: ''}
+    default: return state;
   }
 
-  return state;
 };
 
 const store = createStore(reducer);
@@ -27,9 +28,8 @@ const store = createStore(reducer);
 module.exports = {
   store: store,
   actions: {
-    NEW: NEW,
-    COMPLETE_TOGGLE: COMPLETE_TOGGLE,
-    DELETE: DELETE,
-    INPUT: INPUT
+    INPUT: INPUT,
+    REFRESH: REFRESH,
+    CLEAR_INPUT: CLEAR_INPUT
   }
 }
