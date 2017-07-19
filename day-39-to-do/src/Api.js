@@ -13,7 +13,8 @@ const Api = {
     .done((data) => {
       // console.log('refreshed data', data);
       // Using store.dispatch to call the reducer with the REFRESH action and the updated array of items returned by the api GET call.
-      store.dispatch(Object.assign({}, actions.REFRESH, { items: data.items }));
+      // store.dispatch(Object.assign({}, actions.REFRESH, { items: data.items }));
+      store.dispatch({ type: 'REFRESH', items: data.items });
     });
   },
 

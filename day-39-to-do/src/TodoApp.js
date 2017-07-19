@@ -39,7 +39,7 @@ class TodoApp extends React.Component {
   }
 
   markComplete(id) {
-    //Calling the markComplete function on the api to toggle the isComplete value on this item. That function will then update the data. 
+    //Calling the markComplete function on the api to toggle the isComplete value on this item. That function will then update the data.
     Api.markComplete(id);
   }
 

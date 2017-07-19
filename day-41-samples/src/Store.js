@@ -15,9 +15,9 @@ const counterReducer = (state = { number: 0 }, action) => {
       return { number: state.number - 1 };
     case 'RESET':
       return { number: 0 };
+    default: return state;
   }
 
-  return state;
 };
 
 const store = createStore(counterReducer);
